@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MESHRAM JI AGRICULTURE</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f8f2;
+}
+
+header{
+background:linear-gradient(90deg,#1b5e20,#1565c0);
+color:white;
+text-align:center;
+padding:30px;
+}
+
+.logo{
+font-size:35px;
+font-weight:bold;
+}
+
+section{
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:15px auto;
+border-radius:15px;
+max-width:1000px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+margin-bottom:10px;
+color:#1b5e20;
+}
+
+.btn{
+display:inline-block;
+padding:12px 18px;
+margin:5px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.call{
+background:#1565c0;
+}
+
+.booking{
+background:#ff9800;
+}
+
+.gallery img{
+width:100%;
+max-width:400px;
+border-radius:10px;
+margin:10px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+
+button{
+padding:10px 20px;
+background:#1b5e20;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+footer{
+background:#0d47a1;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1 class="logo">🚜 MESHRAM JI AGRICULTURE</h1>
+
+<h3>Owner : Vijay Kumar Meshram Ji</h3>
+
+<p>Lalburra Bagholi, Balaghat (M.P.)</p>
+
+<p>🌾 किसानों की सेवा हमारा उद्देश्य 🌾</p>
+
+<br>
+
+<a class="btn whatsapp"
+href="https://wa.me/917389095227">
+WhatsApp Booking
+</a>
+
+<a class="btn call"
+href="tel:7389095227">
+Call Now
+</a>
+
+<a class="btn booking"
+href="https://docs.google.com/forms/d/e/1FAIpQLSddgA7X6MjrRBkqF8ptaPoVawvsAuZ0w1PexXJd4eEby-Xn-w/viewform?usp=publish-editor">
+Book Online
+</a>
+
+</header>
+
+<section>
+
+<div class="card">
+
+<h2>👨‍🌾 Owner Section</h2>
+
+<img src="papa-photo.jpg"
+width="250">
+
+<h3>Vijay Kumar Meshram Ji</h3>
+
+<p>Founder & Owner</p>
+
+<p>
+(यहाँ बाद में पापा की फोटो डालना)
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>👤 My Profile</h2>
+
+<img src="my-photo.jpg"
+width="250">
+
+<h3>Prashik Meshram</h3>
+
+<p>Website Manager</p>
+
+<p>
+(यहाँ बाद में अपनी फोटो डालना)
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>🚜 Tractor Gallery</h2>
+
+<p>
+यहाँ Swaraj 744 FE 4WD Blue Tractor की फोटो लगाओ
+</p>
+
+<img src="tractor1.jpg">
+<img src="tractor2.jpg">
+<img src="tractor3.jpg">
+
+</div>
+
+<div class="card">
+
+<h2>🌾 Our Services</h2>
+
+<h3>🚜 Cultivator (Nagar)</h3>
+<p>₹800 / Hour</p>
+
+<br>
+
+<h3>🌾 Rotavator (Rotary)</h3>
+<p>₹1200 / Hour</p>
+
+</div>
+
+<div class="card">
+
+<h2>📊 Tractor Hisab Calculator</h2>
+
+<select id="service">
+
+<option value="800">
+Cultivator (Nagar)
+</option>
+
+<option value="1200">
+Rotavator (Rotary)
+</option>
+
+</select>
+
+<input
+type="number"
+id="hours"
+placeholder="Hours">
+
+<button onclick="calculate()">
+Calculate
+</button>
+
+<h3 id="result"></h3>
+
+</div>
+
+<div class="card">
+
+<h2>📅 Online Booking</h2>
+
+<p>
+Customer नीचे क्लिक करके
+Booking कर सकता है।
+</p>
+
+<a class="btn booking"
+href="https://docs.google.com/forms/d/e/1FAIpQLSddgA7X6MjrRBkqF8ptaPoVawvsAuZ0w1PexXJd4eEby-Xn-w/viewform?usp=publish-editor">
+
+Book Tractor Online
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h2>📞 Contact Us</h2>
+
+<p>
+Booking Number :
+7389095227
+</p>
+
+<p>
+Owner Number :
+7805888857
+</p>
+
+<p>
+Location :
+Lalburra Bagholi,
+Balaghat (M.P.)
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+MESHRAM JI AGRICULTURE © 2026
+
+</footer>
+
+<script>
+
+function calculate(){
+
+let rate =
+parseInt(
+document.getElementById("service").value
+);
+
+let hours =
+parseFloat(
+document.getElementById("hours").value
+)||0;
+
+let total =
+rate * hours;
+
+document.getElementById("result")
+.innerHTML =
+"कुल राशि : ₹" + total;
+
+}
+
+</script>
+
+</body>
+</html>
